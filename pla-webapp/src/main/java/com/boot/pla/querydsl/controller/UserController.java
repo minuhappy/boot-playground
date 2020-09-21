@@ -20,11 +20,13 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import static com.boot.pla.querydsl.entity.QUser.user;
 import static com.boot.pla.querydsl.entity.QUserDetail.userDetail;
 
 
+@Slf4j
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
@@ -96,7 +98,7 @@ public class UserController {
         }
 
         return queryFactory.selectFrom(user)
-            .innerJoin(user.userDetail, userDetail)
+//            .innerJoin(user.userDetail, userDetail)
 //            .offset(1)
 //            .limit(20)
             .where(builder)

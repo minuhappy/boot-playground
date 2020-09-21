@@ -9,6 +9,4 @@ class PlaApplicationTests {
     @Test
     void contextLoads() {
     }
-
-
 }
